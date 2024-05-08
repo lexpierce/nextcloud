@@ -63,6 +63,10 @@ services:
   runtime: image
   image:
     url: nextcloud:latest
+  disk:
+    name: data
+    sizeGB: 5
+    mountPath: /data
   envVars:
   - key: POSTGRES_HOST
     fromDatabase:
