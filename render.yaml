@@ -91,10 +91,12 @@ services:
   - key: REDIS_HOST
     fromService:
       name: nc-redis
+      type: redis
       property: host
   - key: REDIS_HOST_PORT
     fromService:
       name: nc-redis
+      type: redis
       property: port
   # - key: SMTP_HOST
   # - key: SMTP_SECURE
@@ -109,18 +111,22 @@ services:
   - key: OBJECTSTORE_S3_HOST
     fromService:
       name: nc-minio-server
+      type: web
       property: host
   - key: OBJECTSTORE_S3_PORT
     fromService:
       name: nc-minio-server
+      type: web
       property: port
   - key: OBJECTSTORE_S3_KEY
     fromService:
       name: nc-minio-server
+      type: web
       envVarKey: MINIO_ROOT_USER
   - key: OBJECTSTORE_S3_SECRET
     fromService:
       name: nc-minio-server
+      type: web
       envVarKey: MINIO_ROOT_PASSWORD
   - key: OBJECTSTORE_S3_SSL
     value: false
