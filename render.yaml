@@ -48,12 +48,12 @@ services:
     value: 10000
   - key: MINIO_HOST
     fromService:
-      name: minio-server
+      name: nc-minio-server
       type: web
       property: host
   - key: MINIO_CONSOLE_PORT
     fromService:
-      name: minio-server
+      name: nc-minio-server
       type: web
       envVarKey: CONSOLE_PORT
 
