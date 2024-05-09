@@ -85,7 +85,7 @@ services:
       name: nextcloud
       property: password
   - key: NEXTCLOUD_ADMIN_USER
-    generateValue: true
+    value: nc_admin
   - key: NEXTCLOUD_ADMIN_PASSWORD
     generateValue: true
   - key: NEXTCLOUD_DATA_DIR
