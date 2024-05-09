@@ -89,7 +89,7 @@ services:
   - key: NEXTCLOUD_ADMIN_PASSWORD
     generateValue: true
   - key: NEXTCLOUD_DATA_DIR
-    value: /data
+    value: /var/www/html/data
   - key: NEXTCLOUD_INIT_HTACCESS
     value: true
   - key: REDIS_HOST
