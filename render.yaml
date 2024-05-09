@@ -2,7 +2,7 @@ databases:
 - name: nextcloud
   postgresMajorVersion: "16"
   plan: starter
-  ipAllowList: []
+  # ipAllowList: []
   
 
 services:
