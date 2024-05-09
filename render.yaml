@@ -66,7 +66,7 @@ services:
   disk:
     name: data
     sizeGB: 5
-    mountPath: /data
+    mountPath: /var/www/html/data
   envVars:
   - key: POSTGRES_HOST
     fromDatabase:
