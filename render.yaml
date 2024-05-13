@@ -2,7 +2,7 @@ databases:
 - name: nextcloud
   postgresMajorVersion: "16"
   plan: starter
-  # ipAllowList: []
+  ipAllowList: []
   
 
 services:
@@ -25,11 +25,9 @@ services:
     mountPath: /data
   envVars:
   - key: MINIO_ROOT_USER
-    value: "admin"
+    generateValue: true
   - key: MINIO_ROOT_PASSWORD
-    fromDatabase:
-      name: nextcloud
-      property: password
+    generateValue: true
   - key: HOST
     value: "0.0.0.0"
   - key: PORT
@@ -64,11 +62,11 @@ services:
   name: nextcloud
   runtime: image
   image:
-    url: nextcloud:production
+    url: nextcloud:latest
   disk:
     name: data
-    sizeGB: 5
-    mountPath: /var/www/html/data
+    sizeGB: 10
+    mountPath: /var/www/html
   envVars:
   - key: POSTGRES_HOST
     fromDatabase:
@@ -89,9 +87,7 @@ services:
   - key: NEXTCLOUD_ADMIN_USER
     value: admin
   - key: NEXTCLOUD_ADMIN_PASSWORD
-    fromDatabase:
-      name: nextcloud
-      property: password
+    generateValue: true
   # - key: NEXTCLOUD_DATA_DIR
   #   value: /var/www/html/data
   - key: NEXTCLOUD_INIT_HTACCESS
@@ -132,14 +128,16 @@ services:
       type: web
       envVarKey: MINIO_ROOT_USER
   - key: OBJECTSTORE_S3_SECRET
-    # fromService:
-    #   name: nc-minio-server
-    #   type: web
-    #   envVarKey: MINIO_ROOT_PASSWORD
-    fromDatabase:
-      name: nextcloud
-      property: password
+    fromService:
+      name: nc-minio-server
+      type: web
+      envVarKey: MINIO_ROOT_PASSWORD
+    # fromDatabase:
+    #   name: nextcloud
+    #   property: password
   - key: OBJECTSTORE_S3_SSL
     value: false
   - key: OBJECTSTORE_S3_AUTOCREATE
     value: true
+  - key: PORT
+    value: 80
