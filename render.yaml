@@ -41,8 +41,8 @@ services:
   plan: starter
   name: nc-minio-console
   runtime: docker
-  dockerContext: /console
-  dockerfilePath: ./Dockerfile
+  dockerContext: ./console
+  dockerfilePath: ./console/Dockerfile
   envVars:
   - key: HOST
     value: "0.0.0.0"
