@@ -132,10 +132,13 @@ services:
       type: web
       envVarKey: MINIO_ROOT_USER
   - key: OBJECTSTORE_S3_SECRET
-    fromService:
-      name: nc-minio-server
-      type: web
-      envVarKey: MINIO_ROOT_PASSWORD
+    # fromService:
+    #   name: nc-minio-server
+    #   type: web
+    #   envVarKey: MINIO_ROOT_PASSWORD
+    fromDatabase:
+      name: nextcloud
+      property: password
   - key: OBJECTSTORE_S3_SSL
     value: false
   - key: OBJECTSTORE_S3_AUTOCREATE
