@@ -137,6 +137,8 @@ services:
       envVarKey: MINIO_ROOT_PASSWORD
   - key: OBJECTSTORE_S3_SSL
     value: "false"
+  - key: OBJECTSTORE_S3_OBJECT_PREFIX
+    value: "nextcloud"
   - key: OBJECTSTORE_S3_USEPATH_STYLE
     value: "true"
   - key: OBJECTSTORE_S3_AUTOCREATE
