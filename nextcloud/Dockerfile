@@ -1,4 +1,3 @@
-FROM nextcloud:latest
+FROM nextcloud:stable
 
-COPY trusted_domains.sh /docker-entrypoint-hooks.d/before-starting
-RUN chmod +x /docker-entrypoint-hooks.d/before-starting/trusted_domains.sh
+COPY --chmod-0755 trusted_domains.sh /docker-entrypoint-hooks.d/before-starting

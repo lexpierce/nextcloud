@@ -21,7 +21,7 @@ services:
   autoDeploy: false
   disk:
     name: data
-    sizeGB: 12
+    sizeGB: 10
     mountPath: /data
   envVars:
   - key: MINIO_ROOT_USER
@@ -58,17 +58,14 @@ services:
       envVarKey: CONSOLE_PORT
 
 - type: web
-  plan: pro
+  plan: standard
   name: nextcloud
-  # runtime: image
   runtime: docker
   dockerContext: ./nextcloud
   dockerfilePath: ./nextcloud/Dockerfile
-  # image:
-    # url: nextcloud:latest
   disk:
     name: data
-    sizeGB: 13
+    sizeGB: 10
     mountPath: /var/www/html
   envVars:
   - key: POSTGRES_HOST
@@ -91,8 +88,6 @@ services:
     value: admin
   - key: NEXTCLOUD_ADMIN_PASSWORD
     generateValue: true
-  # - key: NEXTCLOUD_DATA_DIR
-  #   value: /var/www/html/data
   - key: NEXTCLOUD_INIT_HTACCESS
     value: "true"
   - key: REDIS_HOST
@@ -145,5 +140,3 @@ services:
     value: "true"
   - key: PORT
     value: 80
-  - key: DUMMY_VAR
-    value: "foo"
