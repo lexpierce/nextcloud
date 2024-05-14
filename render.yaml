@@ -60,9 +60,12 @@ services:
 - type: web
   plan: standard
   name: nextcloud
-  runtime: image
-  image:
-    url: nextcloud:latest
+  # runtime: image
+  runtime: docker
+  dockerContext: ./nextcloud
+  dockerfilePath: ./nextcloud/Dockerfile
+  # image:
+    # url: nextcloud:latest
   disk:
     name: data
     sizeGB: 10
