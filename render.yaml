@@ -94,7 +94,7 @@ services:
   # - key: NEXTCLOUD_DATA_DIR
   #   value: /var/www/html/data
   - key: NEXTCLOUD_INIT_HTACCESS
-    value: true
+    value: "true"
   - key: REDIS_HOST
     fromService:
       name: nc-redis
@@ -139,8 +139,8 @@ services:
     #   name: nextcloud
     #   property: password
   - key: OBJECTSTORE_S3_SSL
-    value: false
+    value: "false"
   - key: OBJECTSTORE_S3_AUTOCREATE
-    value: true
+    value: "true"
   - key: PORT
     value: 80
