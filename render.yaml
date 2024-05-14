@@ -68,7 +68,7 @@ services:
     # url: nextcloud:latest
   disk:
     name: data
-    sizeGB: 10
+    sizeGB: 13
     mountPath: /var/www/html
   envVars:
   - key: POSTGRES_HOST
