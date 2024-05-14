@@ -139,8 +139,8 @@ services:
     value: "false"
   - key: OBJECTSTORE_S3_OBJECT_PREFIX
     value: "nextcloud"
-  # - key: OBJECTSTORE_S3_USEPATH_STYLE
-  #   value: "true"
+  - key: OBJECTSTORE_S3_USEPATH_STYLE
+    value: "true"
   - key: OBJECTSTORE_S3_AUTOCREATE
     value: "true"
   - key: PORT
