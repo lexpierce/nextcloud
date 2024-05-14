@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y supervisor \
 
 COPY supervisord.conf /
 
-COPY trusted_domains.sh /docker-entrypoint-hooks.d/pre-installation
-RUN chmod +x /docker-entrypoint-hooks.d/pre-installation/trusted_domains.sh
+COPY trusted_domains.sh /docker-entrypoint-hooks.d/post-installation
+RUN chmod +x /docker-entrypoint-hooks.d/post-installation/trusted_domains.sh
 ENV NEXTCLOUD_UPDATE=1
 
 CMD ["/usr/bin/supervisord", "-c", "/supervisord.conf"]
