@@ -58,7 +58,7 @@ services:
       envVarKey: CONSOLE_PORT
 
 - type: web
-  plan: standard
+  plan: pro
   name: nextcloud
   # runtime: image
   runtime: docker
