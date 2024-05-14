@@ -145,3 +145,5 @@ services:
     value: "true"
   - key: PORT
     value: 80
+  - key: DUMMY_VAR
+    value: "foo"
