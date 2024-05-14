@@ -68,7 +68,7 @@ services:
     # url: nextcloud:latest
   disk:
     name: data
-    sizeGB: 12
+    sizeGB: 10
     mountPath: /var/www/html
   envVars:
   - key: POSTGRES_HOST
@@ -135,9 +135,6 @@ services:
       name: nc-minio-server
       type: web
       envVarKey: MINIO_ROOT_PASSWORD
-    # fromDatabase:
-    #   name: nextcloud
-    #   property: password
   - key: OBJECTSTORE_S3_SSL
     value: "false"
   - key: OBJECTSTORE_S3_AUTOCREATE
