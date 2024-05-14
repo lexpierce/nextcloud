@@ -3,7 +3,7 @@ databases:
   postgresMajorVersion: "16"
   plan: starter
   ipAllowList: []
-  
+
 
 services:
 - type: redis
@@ -68,7 +68,7 @@ services:
     # url: nextcloud:latest
   disk:
     name: data
-    sizeGB: 10
+    sizeGB: 12
     mountPath: /var/www/html
   envVars:
   - key: POSTGRES_HOST
