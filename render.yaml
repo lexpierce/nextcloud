@@ -114,7 +114,7 @@ services:
   # - key: MAIL_FROM_ADDRESS
   # - key: MAIL_DOMAIN
   - key: OBJECTSTORE_S3_BUCKET
-    value: nextcloud-store
+    value: nextcloud
   - key: OBJECTSTORE_S3_HOST
     fromService:
       name: nc-minio-server
