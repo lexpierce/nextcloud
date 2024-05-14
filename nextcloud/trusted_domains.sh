@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-# sed '/\'localhost\'/a\
-#     1 => \''$RENDER_EXTERNAL_HOSTNAME'\',
-# ' config.php
+sudo -u www-data php occ config:system:set trusted_domains 1 --value=${RENDER_EXTERNAL_HOSTNAME}
 
 echo "Added $RENDER_EXTERNAL_HOSTNAME to trusted domains"

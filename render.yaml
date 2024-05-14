@@ -114,7 +114,7 @@ services:
   # - key: MAIL_FROM_ADDRESS
   # - key: MAIL_DOMAIN
   - key: OBJECTSTORE_S3_BUCKET
-    value: nextcloud
+    value: nextcloud-store
   - key: OBJECTSTORE_S3_HOST
     fromService:
       name: nc-minio-server
@@ -124,7 +124,7 @@ services:
     fromService:
       name: nc-minio-server
       type: web
-      property: port
+      envVarKey: PORT
   - key: OBJECTSTORE_S3_KEY
     fromService:
       name: nc-minio-server
@@ -137,6 +137,8 @@ services:
       envVarKey: MINIO_ROOT_PASSWORD
   - key: OBJECTSTORE_S3_SSL
     value: "false"
+  - key: OBJECTSTORE_S3_USEPATH_STYLE
+    value: "true"
   - key: OBJECTSTORE_S3_AUTOCREATE
     value: "true"
   - key: PORT
