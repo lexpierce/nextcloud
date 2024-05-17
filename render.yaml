@@ -4,7 +4,6 @@ databases:
   plan: starter
   ipAllowList: []
 
-
 services:
 - type: redis
   name: nc-redis
